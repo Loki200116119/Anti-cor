@@ -49,38 +49,56 @@ npm install
 
 Frontendni ishga tushiring:
 
+1️⃣ Backend
+
+📍 To‘g‘ri papkaga kiring:
+
+cd backend/cleansignal-backend-ideal/cleansignal-backend-ideal
+Virtual environment (MUHIM — yangidan yarating)
+Remove-Item -Recurse -Force .venv
+python -m venv .venv
+Aktivatsiya
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\.venv\Scripts\Activate.ps1
+Install + run
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+
+👉 Backend:
+
+http://localhost:8000
+
+👉 Docs:
+
+http://localhost:8000/docs
+2️⃣ Frontend (yangi terminal)
+
+📍 Frontend papkaga kiring:
+
+cd frontend
+Run
+npm install
 npm run dev
 
-Frontend localhost:
+👉 Frontend:
 
 http://localhost:5173
-3. Frontend backendga ulanishi
 
-Frontend papkada .env fayl bo‘lishi kerak:
+(ba’zida 5174 chiqishi mumkin)
 
-VITE_API_URL=http://127.0.0.1:8000
+⚡ Qisqa versiya
+# Backend
+cd backend/cleansignal-backend-ideal/cleansignal-backend-ideal
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+uvicorn app.main:app --reload
 
-Agar .env.example bo‘lsa:
-
-copy .env.example .env
-4. Test qilish
-Backend ishlayotganini tekshiring:
-http://127.0.0.1:8000/docs
-Frontendni oching:
-http://localhost:5173
-Send Report bo‘limiga kiring.
-Test uchun yozing:
-Toshkentdagi maktabda imtihon bahosini oshirish uchun 200 ming so‘m norasmiy to‘lov so‘raldi.
-Submit qiling.
-
-Agar hammasi to‘g‘ri bo‘lsa:
-
-AI score chiqadi
-Tracking ID chiqadi
-Backend terminalda POST /reports 200 OK chiqadi
-5. Muhim
-
-Backend va frontend bir vaqtda ishlashi kerak:
-
-Backend: http://127.0.0.1:8000
-Frontend: http://localhost:5173
+# Frontend (new terminal)
+cd frontend
+npm install
+npm run dev
+❗ Muhim
+.venvni har doim yangidan yarating
+Backend ishlamasa → frontend demo modega o‘tadi
+Ichma-ich papkani keyin soddalashtirish tavsiya qilinadi
